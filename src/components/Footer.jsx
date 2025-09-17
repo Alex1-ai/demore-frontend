@@ -137,11 +137,11 @@ const Footer = () => {
         <Right>
             <Title>Contact</Title>
             <ContactItem>
-               <Room style={{marginRight:"10px"}}/> Greater Accra , Wesley Grammars Dansoman.
+               <Room style={{marginRight:"10px"}}/> Lagos States, Amuwo Odofin Land, Festac.
             </ContactItem>
 
             <ContactItem>
-              <Phone style={{marginRight:"10px"}} /> +233 49 67 983
+              <Phone style={{marginRight:"10px"}} /> +233 67 13 9902
             </ContactItem>
 
             <ContactItem>

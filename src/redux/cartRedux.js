@@ -21,13 +21,13 @@ const cartSlice = createSlice({
       if (existingProduct) {
         // If product exists with the same size and color, increment the quantity
         existingProduct.quantity += quantity;
-        state.total += price * quantity;
       } else {
         // If product does not exist, add as new product
         state.quantity += 1;
-        state.products.push(action.payload);
-        state.total += price * quantity;
       }
+      state.total += price * quantity;
+      state.products.push(action.payload);
+
     },
     removeProduct: (state, action) => {
       const { _id, size, color } = action.payload;

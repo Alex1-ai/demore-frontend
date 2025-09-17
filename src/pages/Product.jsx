@@ -87,9 +87,9 @@ const FilterColor =styled.div`
    cursor: pointer;
    transition: all 0.5s ease;
    &:hover{
-    
+
      transform: scale(1.4);
-     
+
      cursor:pointer;
     }
 
@@ -129,12 +129,12 @@ const Amount = styled.span`
     &:hover{
       background-color: #e9f5f5;
       transform: scale(1.3);
-      
+
       cursor:pointer;
      }
-    
-   
-   
+
+
+
 
 `
 
@@ -148,7 +148,7 @@ const Button =styled.button`
    &:hover{
      background-color: #e9f5f5;
      transform: scale(1.3);
-     
+
      cursor:pointer;
     }
 
@@ -169,7 +169,7 @@ const Product = () => {
          try{
             const res = await publicRequest.get("products/find/"+id)
             setProduct(res.data)
-            console.log(res.data.color)
+            // console.log(res.data.color)
          }catch(err){
                console.log("error" , err)
          }
@@ -201,7 +201,7 @@ const Product = () => {
        <Wrapper>
           <ImgContainer>
               <Image src={product.img} />
-          
+
           </ImgContainer>
             <InfoContainer>
                 <Title>{product.title}</Title>
@@ -209,15 +209,15 @@ const Product = () => {
                   {product.desc}
 
                 </Desc>
-                <Price>$ {product.price}</Price>
+                <Price>₦ {product.price}</Price>
                 <FilterContainer>
                     <Filter>
                         <FilterTitle>Color</FilterTitle>
                         { product.color?.map((c)=>(
                            <FilterColor color={c} key={c} onClick={()=>setColor(c)} />
                         ))}
-                     
-                        
+
+
                     </Filter>
                     <Filter>
                         <FilterTitle>Size</FilterTitle>
@@ -226,11 +226,11 @@ const Product = () => {
                                <FilterSizeOption key={s}>{s}</FilterSizeOption>
 
                             ))}
-                           
+
 
                         </FilterSize>
-                        
-                        
+
+
                     </Filter>
                 </FilterContainer>
                 <AddContainer>
@@ -250,7 +250,7 @@ const Product = () => {
        <Footer />
 
 
-      
+
     </Container>
   )
 }

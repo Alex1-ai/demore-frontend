@@ -23,12 +23,13 @@ const Success = () => {
 
   useEffect(() => {
     const createOrder = async () => {
+      console.log(cart.products)
       try {
         const res = await userRequest.post("orders", {
           userId: currentUser._id,
           products: cart.products.map((item) => ({
             productId: item._id,
-            quantity: item._quantity,
+            quantity: item.quantity,
             img: item.img,
             title: item.title
           })),

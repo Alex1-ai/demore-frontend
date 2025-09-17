@@ -14,11 +14,8 @@ import { useNavigate } from 'react-router-dom';
 import Newsletter from '../components/Newsletter'
 import { removeProduct } from '../redux/cartRedux'
 
-// require('dotenv').config()
-console.log(process.env.REACT_APP_STRIPE_KEY);
 const KEY=process.env.REACT_APP_STRIPE_KEY;
-// const KEY ="sk_test_51LflGiBfZd4ZWVbTN0NLcAQ0LkwibK4iU3ZJZAjGHqf0gHz7e3Kl3j2XfQCDKhgc6wvdvfIIDtFtgP6sXDmqmVtA00NkbHxGV2"
-console.log("key ",KEY)
+
 const Container = styled.div``
 const Wrapper = styled.div`
    padding: 20px;
@@ -216,6 +213,8 @@ const Cart = () => {
    const [stripeToken, setStripeToken] = useState(null);
    const navigate = useNavigate();
 
+   console.log("working")
+
    const onToken = (token) => {
      setStripeToken(token);
    };
@@ -304,7 +303,7 @@ const Cart = () => {
                        <ProudctAmountContainer>
                          <ProductAmount>{product.quantity}</ProductAmount>
                        </ProudctAmountContainer>
-                       <ProductPrice>$ {product.price * product.quantity}</ProductPrice>
+                       <ProductPrice>₦ {product.price * product.quantity}</ProductPrice>
                      </PriceDetail>
                    </Product>
                    <Hr />
@@ -316,19 +315,19 @@ const Cart = () => {
              <SummaryTitle>ORDER SUMMARY</SummaryTitle>
              <SummaryItem>
                <SummaryItemText>Subtotal:</SummaryItemText>
-               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+               <SummaryItemPrice>₦ {cart.total}</SummaryItemPrice>
              </SummaryItem>
              <SummaryItem>
                <SummaryItemText>Estimated Shipping:</SummaryItemText>
-               <SummaryItemPrice>$ 5.90</SummaryItemPrice>
+               <SummaryItemPrice>₦ 5.90</SummaryItemPrice>
              </SummaryItem>
              <SummaryItem>
                <SummaryItemText>Shipping Discount:</SummaryItemText>
-               <SummaryItemPrice>$ -5.90</SummaryItemPrice>
+               <SummaryItemPrice>₦ -5.90</SummaryItemPrice>
              </SummaryItem>
              <SummaryItem type="total">
                <SummaryItemText>Total:</SummaryItemText>
-               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
+               <SummaryItemPrice>₦ {cart.total}</SummaryItemPrice>
              </SummaryItem>
              {cart.products.length > 0 && (
                <StripeCheckout
@@ -336,7 +335,7 @@ const Cart = () => {
                  image="https://alexis.onrender.com/static/assets/img/default.bda90a2a444c.png"
                  billingAddress
                  shippingAddress
-                 description={`Your total is $${cart.total}`}
+                 description={`Your total is ₦${cart.total}`}
                  amount={cart.total * 100}
                  token={onToken}
                  stripeKey={KEY}

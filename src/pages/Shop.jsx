@@ -40,10 +40,10 @@ const Option = styled.option``;
 
 const Shop = () => {
   const location = useLocation();
-  console.log(location.state?.search)
+  // console.log(location.state?.search)
   const searchQuery = location.state?.search;
   // const searchQuery = searchParams.get("search") || "";
-  console.log("This is the search engine ",searchQuery)
+  // console.log("This is the search engine ",searchQuery)
 
   const [filters, setFilters] = useState({});
   const [sort, setSort] = useState("Newest");

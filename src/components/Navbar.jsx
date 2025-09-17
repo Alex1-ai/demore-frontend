@@ -113,9 +113,9 @@ const Navbar = () => {
   const [search, setSearch] = useState("");
   const dispatch = useDispatch();
   const user = useSelector(state=>state.user.currentUser)
-  console.log(user)
+  // console.log(user)
   const quantity = useSelector(state=>state.cart.quantity)
-  console.log(quantity)
+  // console.log(quantity)
   const navigate = useNavigate();
 
   const handleLogOut = async() =>{
@@ -128,7 +128,7 @@ const Navbar = () => {
 
   const handleSearch = (e) =>{
     e.preventDefault()
-    console.log("DOne with the search "+ search)
+    // console.log("DOne with the search "+ search)
     navigate(`/shops`, { state: { "search": search } });
 
   }
@@ -143,7 +143,7 @@ const Navbar = () => {
                 </Language>
                 <SearchContainer>
                     <Input placeholder='Search' onChange={(e)=>{
-                      console.log(e.target.value)
+                      // console.log(e.target.value)
                       setSearch(e.target.value)}} />
 
                     <Search  onClick={handleSearch} style={{color:"grey", fontSize:16}} />
@@ -152,7 +152,7 @@ const Navbar = () => {
             </Left>
             <Center>
             <Link style={{ textDecoration:'none', color:"black", border:'none'}} to="/">
-                <Logo>DEMORE.</Logo>
+                <Logo> DEMURE.</Logo>
             </Link>
             </Center>
             <Right>

@@ -76,7 +76,8 @@ const OrderCard = ({ order }) => {
       <OrderTitle>Order ID: {order._id}</OrderTitle>
       <ProductList>
         {order.products.map((product, index) =>{
-            console.log(product.img)
+            // console.log(product)
+            // console.log(order)
 
         return (
           <ProductItem key={index}>
@@ -88,7 +89,7 @@ const OrderCard = ({ order }) => {
           </ProductItem>
         )})}
       </ProductList>
-      <OrderAmount>Total: ${order.amount}</OrderAmount>
+      <OrderAmount>Total: ₦{order.amount}</OrderAmount>
       <OrderStatus status={order.status}>{order.status}</OrderStatus>
       <OrderDate>Ordered on: {formattedDate}</OrderDate>
     </OrderContainer>

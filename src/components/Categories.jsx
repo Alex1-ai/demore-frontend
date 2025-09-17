@@ -3,6 +3,7 @@ import styled from 'styled-components'
 // import { categories } from '../data'
 import CategoryItem from './CategoryItem'
 import { mobile } from '../responsive'
+import { categories } from '../data';
 import axios from 'axios'
 import { BASE_URL } from '../requestMethods'
 const Container = styled.div`
@@ -22,22 +23,22 @@ const Container = styled.div`
 
 const Categories = () => {
 
-  const [categories, setCategories] = useState([])
+  // const [categories, setCategories] = useState([])
 
-  useEffect(()=>{
-    const fetchData =async()=>{
-      try{
-        const res = await axios.get( `${BASE_URL}categories`)
-        setCategories(res.data);
+  // useEffect(()=>{
+  //   const fetchData =async()=>{
+  //     try{
+  //       const res = await axios.get( `${BASE_URL}categories`)
+  //       setCategories(res.data);
 
-      }catch(e){
-        console.log("THis is the error ", e)
-      }
-    }
+  //     }catch(e){
+  //       console.log("THis is the error ", e)
+  //     }
+  //   }
 
-    fetchData()
+  //   fetchData()
 
-  },[])
+  // },[])
   return (
     <Container>
         {categories.map(item=>(
